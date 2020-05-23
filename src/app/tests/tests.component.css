@@ -1,0 +1,3 @@
+ ::ng-deep tbody  tr.ng2-smart-row.selected
+{ cursor: pointer;} 
+/* background:#30a5ff !important; border:1px solid blue; */

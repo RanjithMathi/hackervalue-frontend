@@ -1,0 +1,91 @@
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse"><span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span></button>
+                <a class="navbar-brand" href="#"><span>Hacker</span>Value</a>
+            </div>
+        </div>
+      </nav>
+       <app-sidebar></app-sidebar>
+    <div class="panel panel-container">
+    <div class="panel-heading">Add Question</div>
+    <!-- <div class="col-md-12"> -->
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <form class="form-horizontal row-border" (ngSubmit)="onSubmit()" #heroForm="ngForm">
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Test Name </label>
+                        <div class="col-md-10">
+                            <select class="form-control"  [(ngModel)]="model.quizTitle" name="quizTitle"
+                            #quizTitle="ngModel">
+                                <!-- <option value="">Please select a Test</option> -->
+                                <option *ngFor="let testName of testNames"
+                                        [value]="testName.name">
+                                        {{testName.name}}
+                                </option>
+                              </select>
+                            <!-- <input type="text" name="quizTitle" [(ngModel)]="model.quizTitle"
+                            #quizTitle="ngModel" class="form-control"> -->
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Question Line</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" type="text" name="questionLines"
+                             [(ngModel)]="model.questionLines" name="name"
+                            #questionLines="ngModel"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label"> Question </label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" type="text" name="questions"
+                            [(ngModel)]="model.questions"
+               #questions="ngModel" placeholder="Question"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label"> Choices </label>
+                        <div class="col-md-6">
+                            <input type="text"  [(ngModel)]="choicesAdded" name="choices"
+                            #choices="ngModel"
+                                class="form-control">
+                        </div>
+                        <div class="col-md-1">
+                            <button class="btn btn-default btn-circle margin" (click)="addChoice()" type="button"><span class="fa fa-plus"></span></button>
+                        </div>
+                        <div class="col-md-1">
+                            <button class="btn btn-default btn-circle margin" type="button"><span class="fa fa-minus"></span></button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-2 control-label"> Answers </label>
+                        <div class="col-md-6">
+                            <input type="text"  [(ngModel)]="answerAdded" name="answers"
+                            #answers="ngModel"
+                                class="form-control">
+                        </div>
+                        <div class="col-md-1">
+                            <button class="btn btn-default btn-circle margin" (click)="addAnswer()" type="button"><span class="fa fa-plus"></span></button>
+                        </div>
+                        <div class="col-md-1">
+                            <button class="btn btn-default btn-circle margin" type="button"><span class="fa fa-minus"></span></button>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary" type="submit"> Submit </button>
+                   
+                </form>
+            </div>
+        <!-- </div> -->
+    </div>
+</div>
+</div>
+
+
+

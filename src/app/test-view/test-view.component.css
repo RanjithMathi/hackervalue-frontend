@@ -1,0 +1,7 @@
+.questionLine{
+    background-color: #30a5ff;color: #ffffff;padding: 2%; font-weight: bold;font-size: large;
+}
+
+.question{
+    background-color: #222222;color: #ffffff;padding: 2%;white-space: pre;
+}
